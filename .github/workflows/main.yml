@@ -6,6 +6,33 @@ on:
       - main
 
 jobs:
+  build-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v7
+      - name: install required package
+        run: pip install -r requirements.txt
+
+      - name: run test case
+        run: pytest --cov=calc --cov-report=term
+
+      -name: print message
+        run: echo "Build job completed successfully"
+
+  deploy-job:
+    needs: build-job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v7
+      - name: install required package
+        run: pip install -r requirements.txt
+
+      - name: run test case
+        run: pytest --cov=calc --cov-report=term
   run-python-code:
     runs-on: ubuntu-latest
 
@@ -14,7 +41,7 @@ jobs:
         uses: actions/checkout@v7
       - name: install required package
         run: pip install -r requirements.txt
-        
+
       - name: run test case
         run: pytest --cov=calc --cov-report=term 
 

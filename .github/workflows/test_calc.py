@@ -1,4 +1,3 @@
-import pytest
 from calc import add, sub, mul, div
 
 
