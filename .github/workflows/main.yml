@@ -18,7 +18,7 @@ jobs:
       - name: run test case
         run: pytest --cov=calc --cov-report=term
 
-      -name: print message
+      - name: print message
         run: echo "Build job completed successfully"
 
   deploy-job:
@@ -26,6 +26,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: print message
+        run: echo "Build job"
       - name: checkout code
         uses: actions/checkout@v7
       - name: install required package
