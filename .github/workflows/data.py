@@ -1,10 +1,10 @@
 import  pandas as pd
 import requests
 
-data={
-    "id":[1,2,3]
-    "name":['A','B','C'] # pyright: ignore[reportInvalidTypeForm]
-    "age":[20, 30, 60] # pyright: ignore[reportInvalidTypeForm]
+data = {
+    "id": [1, 2, 3],
+    "name": ['A', 'B', 'C'],  # pyright: ignore[reportInvalidTypeForm]
+    "age": [20, 30, 60]  # pyright: ignore[reportInvalidTypeForm]
 }
 
 print('Students Details')
