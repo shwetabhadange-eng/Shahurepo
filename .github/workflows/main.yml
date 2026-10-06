@@ -12,9 +12,7 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v7
+      - name: run test case
+        run: pytest --cov=calc --cov-report=term 
 
-      - name: install required library
-        run: pip install -r requirements.txt
-
-      - name: run python
-        run: python data.py
+      
