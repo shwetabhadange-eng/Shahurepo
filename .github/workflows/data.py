@@ -14,3 +14,4 @@ print(df)
 print('API data')
 response = requests.get('https://jsonplaceholder.typicode.com')
 print(response.json())
+

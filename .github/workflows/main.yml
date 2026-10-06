@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: install required library
-        run: pip install pandas requests streamlit
+        run: pip install -r requirements.txt
 
       - name: run python
         run: python data.py
