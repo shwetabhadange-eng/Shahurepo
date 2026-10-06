@@ -1,1 +1,20 @@
+name: python external library
 
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  run-python-code:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v7
+
+      - name: install required library
+        run: pip install pandas requests.streamlit
+
+      - name: run python
+        run: python data.py
